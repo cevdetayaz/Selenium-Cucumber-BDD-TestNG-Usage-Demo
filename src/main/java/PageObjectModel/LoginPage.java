@@ -8,6 +8,12 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage extends BasePage {
 
     WebDriver driver;
+    private String emailBox = "(//*[@type=\"email\"])[2]";
+    private String passwordBox = "(//*[@type=\"password\"])[1]";
+    private CharSequence emailInfo = "r514q.test@inbox.testmail.app";
+    private CharSequence passwordInfo = "M4ae$GrhXZ+hLQS";
+
+    // Constants
 
     public LoginPage() {
         driver = Driver.getDriver();
@@ -18,8 +24,8 @@ public class LoginPage extends BasePage {
     }
 
     public void enterEmailAddressAndPassword() {
-        driver.findElement(By.xpath("(//*[@type=\"email\"])[2]")).sendKeys("r514q.test@inbox.testmail.app");
-        driver.findElement(By.xpath("(//*[@type=\"password\"])[1]")).sendKeys("M4ae$GrhXZ+hLQS");
+        driver.findElement(By.xpath(emailBox)).sendKeys(emailInfo);
+        driver.findElement(By.xpath(passwordBox)).sendKeys(passwordInfo);
 
     }
 

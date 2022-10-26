@@ -8,14 +8,16 @@ import org.testng.Assert;
 public class MainPage extends BasePage {
 
     WebDriver driver;
-    String nav_to_mainpage = "https://www.akakce.com/";
 
-    public MainPage() {
-        driver = Driver.getDriver();
+    // Constants
+    private String nav_to_mainpage = "https://www.akakce.com/";
+
+    public MainPage() { driver = Driver.getDriver();
+
     }
     public void navigateToWebSite() {
         driver.get(nav_to_mainpage);
-        driver.manage().window().maximize();
+
 
     }
 

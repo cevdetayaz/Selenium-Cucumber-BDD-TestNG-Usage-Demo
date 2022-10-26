@@ -2,17 +2,14 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import PageObjectModel.LoginPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
+import io.cucumber.java.en.When;
 
 public class LoginSteps {
-    WebDriver driver;
     LoginPage loginPage = new LoginPage();
-    @And("Click Giris Yap Link")
+
+    @When("Click Giris Yap Link")
     public void clickGirisYapLink() {
         loginPage.clickGirisYapLink();
-
     }
 
     @And("Enter email address and password")

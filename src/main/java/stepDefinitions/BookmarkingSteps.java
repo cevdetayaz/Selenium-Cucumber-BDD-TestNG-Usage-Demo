@@ -5,12 +5,12 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import PageObjectModel.BookmarkPage;
-import org.openqa.selenium.WebDriver;
+import io.cucumber.java.en.When;
+
 
 public class BookmarkingSteps {
-    WebDriver driver;
-    BookmarkPage bookmarkPage = new BookmarkPage();
 
+    BookmarkPage bookmarkPage = new BookmarkPage();
 
     @And("Search specific item as written to searchbar")
     public void searchSpecificItemAsWrittenToSearchbar() {
@@ -22,7 +22,7 @@ public class BookmarkingSteps {
         bookmarkPage.verifyThatSearchResultDisplayed();
     }
 
-    @And("Click and display second page of search results")
+    @When("Click and display second page of search results")
     public void clickAndDisplaySecondPageOfSearchResults() {
         bookmarkPage.clickAndDisplaySecondPageOfSearchResults();
     }
@@ -32,7 +32,7 @@ public class BookmarkingSteps {
         bookmarkPage.verifyThatSecondPageOfSearchResultsDisplayed();
     }
 
-    @And("Add third item to TakipEttiklerim")
+    @When("Add third item to TakipEttiklerim")
     public void addThirdItemToTakipEttiklerim() {
         bookmarkPage.addThirdItemToTakipEttiklerim();
     }
@@ -47,7 +47,7 @@ public class BookmarkingSteps {
         bookmarkPage.verifyThatItemIsDisplayedOnTheTakipListemPage();
     }
 
-    @And("Remove item form TakipEttiklerim")
+    @When("Remove item form TakipEttiklerim")
     public void removeItemFormTakipEttiklerim() {
         bookmarkPage.removeItemFormTakipEttiklerim();
     }
@@ -56,6 +56,15 @@ public class BookmarkingSteps {
     public void verifyThatItemIsNotOnTheTakipEttiklerimList() {
         bookmarkPage.verifyThatItemIsNotOnTheTakipEttiklerimList();
     }
+
+    @After
+    public void close() {
+        Driver.TearDown();
+    }
+
+
+
+
 
 
 }
