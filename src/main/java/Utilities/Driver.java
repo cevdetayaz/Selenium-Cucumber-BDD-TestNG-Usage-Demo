@@ -17,7 +17,6 @@ public class Driver {
     public static WebDriver getDriver() {
         if (driver == null) {
             ChromeOptions chromeOptions = new ChromeOptions();
-            // chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             chromeOptions.addArguments("--disable-popup-blocking");
             chromeOptions.addArguments("–disable-notifications");
             WebDriverManager.chromedriver().setup();

@@ -3,11 +3,11 @@
 
 Merhaba,
 
-Bu projede akakçe.com sayfasını kullandım. Kullanıcı girişi, ürünü takibe alıp takipten kaldırma ve doğrulama işlemlerini otomasyona uyguladım.
+Bu projede [akakce.com](https://www.akakce.com) sayfasını kullandım. Kullanıcı girişi, ürünü takibe alıp takipten kaldırma ve doğrulama işlemlerini otomasyona uyguladım.
 
 Adımlar aşağıdaki gibidir:
 
-1. Amazon dışında herhangi bir şirketin sitesine gelecek ve anasayfanin acildigini onaylayacak
+1. Akakce.com sayfasına gidecek ve anasayfanin acildigini onaylayacak
 2. Login ekranini acip, bir kullanici ile login olacak ( daha once siteye uyeliginiz varsa o olabilir )
 3. Ekranin ustundeki Search alanina 'samsung' yazip Ara butonuna tiklayacak
 4. Gelen sayfada samsung icin sonuc bulundugunu onaylayacak
@@ -18,3 +18,16 @@ Adımlar aşağıdaki gibidir:
 9. Favorilere alinan bu urunun yanindaki 'Kaldir' butonuna basarak, favorilerimden cikaracak
 10. Sayfada bu urunun artik favorilere alinmadigini onaylayacak.  
 
+### Yararlanılan Teknolojiler
+* Java 
+* Selenium WebDriver (ChromeDriver 107.0.5304.62)
+* Maven
+* BDD
+* Cucumber 
+* TestNG 
+* Windows 11 üzerinde Chrome 106 and 107 stable sürümlerinde test edilmiştir. 
+
+### Kaynaklar
+* https://www.selenium.dev/documentation/webdriver/
+* https://mvnrepository.com/
+* https://cucumber.io/docs/cucumber/

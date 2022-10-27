@@ -1,7 +1,7 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.And;
 import PageObjectModel.LoginPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 
 public class LoginSteps {
@@ -21,4 +21,6 @@ public class LoginSteps {
     public void clickGirisYapButton() {
         loginPage.clickGirisYapButton();
     }
+
+
 }

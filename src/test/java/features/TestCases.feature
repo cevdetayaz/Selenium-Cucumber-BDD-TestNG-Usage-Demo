@@ -1,11 +1,20 @@
-@Cart
+# Cucumber Gherkin syntax kullanarak BDD (Behavior-driven development)
+# Feature: test suite karşılığımızdır.
+# Background: Her senaryo öncesi çalışacak aksiyonları barındırır.
+# Scenario: senaryo yani testcase
+# Given:
+# When: Bir eylemin gerçekleştiği steplere yazılır.
+# Then: Bir doğrulama vb işlem gerektiren steplere yazılır.
+# And: Tekrar eden komutlar varsa kullanılır. Mesela 2 kere üste when ile başlayan stepler yazdığımda devam eden stepin
+# yukarıdaki ile aynı olduğu durumlarda And kullanılabilir. Zorunlu değil.
+
 Feature: TestCases
 
   Background:
-    Given Navigate to Web Site
+    When Navigate to Web Site
     Then Verify that home page is displayed successfully
 
-  Scenario: demo test case
+  Scenario: add item to Takip List and remove it
     When Click Giris Yap Link
     And Enter email address and password
     And Click Giris Yap button

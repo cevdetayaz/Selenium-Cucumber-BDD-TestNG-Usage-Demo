@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5edb7419-63a4-460d-9551-ac644bf3ec20" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObjectModel/BasePage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObjectModel/BookmarkPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjectModel/BookmarkPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObjectModel/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjectModel/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObjectModel/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObjectModel/MainPage.java" afterDir="false" />
@@ -58,6 +60,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
@@ -134,7 +137,8 @@
       <updated>1666710921424</updated>
       <workItem from="1666710922772" duration="7069000" />
       <workItem from="1666720893476" duration="15864000" />
-      <workItem from="1666786334227" duration="26132000" />
+      <workItem from="1666786334227" duration="28105000" />
+      <workItem from="1666854465234" duration="5510000" />
     </task>
     <servers />
   </component>

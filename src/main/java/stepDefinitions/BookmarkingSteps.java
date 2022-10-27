@@ -1,10 +1,8 @@
 package stepDefinitions;
 
-import Utilities.Driver;
-import io.cucumber.java.After;
+import PageObjectModel.BookmarkPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import PageObjectModel.BookmarkPage;
 import io.cucumber.java.en.When;
 
 
@@ -57,10 +55,9 @@ public class BookmarkingSteps {
         bookmarkPage.verifyThatItemIsNotOnTheTakipEttiklerimList();
     }
 
-    @After
-    public void close() {
-        Driver.TearDown();
-    }
+
+
+
 
 
 

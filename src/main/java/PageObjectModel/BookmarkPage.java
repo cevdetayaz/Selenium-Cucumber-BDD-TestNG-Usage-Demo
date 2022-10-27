@@ -10,25 +10,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.time.Duration;
 
-public class BookmarkPage extends BasePage {
+public class BookmarkPage {
     WebDriver driver;
 
     // Constants
     private String itemName = "";
-    private String searchBar = "/html/body/div[1]/header/div[3]/form/span/input";
-    private String searchBarInput = "//div/form/span/input";
-    private String searchResultPage = "https://www.akakce.com/arama/?q=samsung";
-    private CharSequence searchItemValue = "samsung";
-    private String clickNextPage = "/html/body/div[2]/p[2]/a[2]";
-    private String secondSearchResultPage = "https://www.akakce.com/arama/?q=samsung&p=2";
-    private String itemNameLocator = "//li[3]/a/span[2]/h3";
-    private String thirdTakipEtButton = "(//span[text()='Takip Et'])[3]";
-    private String takipListemLocator = "//div/a[text()='Takip Listem']";
-    private String itemLocatorOnTakipList = "//li[2]/a/span/h3";
-    private String ucNoktaTakipListItem = "//li[2]/i[1]";
-    private String takibiBirakButton = "(//span[text()='Takibi Bırak'])[3]";
-    private String takibiBirakmaOnayi = "//div/div/button[2]";
-    private String takipListenizBos = "div.empty-follow-list > h2";
+    private final String searchBar = "//*[@id=\"q\"]";
+    private final String searchBarInput = "//*[@id=\"q\"]";
+    private final String searchResultPage = "https://www.akakce.com/arama/?q=samsung";
+    private final CharSequence searchItemValue = "samsung";
+    private final String clickNextPage = "//div[2]/p[2]/a[2]";
+    private final String secondSearchResultPage = "https://www.akakce.com/arama/?q=samsung&p=2";
+    private final String itemNameLocator = "//li[3]/a/span/h3";
+    private final String thirdTakipEtButton = "(//span[text()='Takip Et'])[3]";
+    private final String takipListemLocator = "//div/a[text()='Takip Listem']";
+    private final String itemLocatorOnTakipList = "//li[2]/a/span/h3";
+    private final String ucNoktaTakipListItem = "//li[2]/i[1]";
+    private final String takibiBirakButton = "(//span[text()='Takibi Bırak'])[3]";
+    private final String takibiBirakmaOnayi = "//div/div/button[2]";
+    private final String takipListenizBos = "div.empty-follow-list > h2";
 
     public BookmarkPage() {
         driver = Driver.getDriver();
@@ -65,20 +65,20 @@ public class BookmarkPage extends BasePage {
     }
 
     public void verifyThatItemIsDisplayedOnTheTakipListemPage() {
-        // ürün arama sayfasında ürünü takip listesine eklerken aynı zamanda ürün ismini de
-        // itemName objesi üzerinde saklayarak taşıdım. Takip Listesi sayfasında bulunan ürün ismi ile
-        // kıyaslama yaparak ürünün varlığını kontrol ettim.
-        Assert.assertEquals(itemName, driver.findElement(By.xpath(itemLocatorOnTakipList)).getText() );
+        /* ürün arama sayfasında ürünü takip listesine eklerken aynı zamanda ürün ismini de
+        itemName objesi üzerinde saklayarak taşıdım. Takip Listesi sayfasında bulunan ürün ismi ile
+        kıyaslama yaparak ürünün varlığını kontrol ettim. */
+        Assert.assertEquals(itemName, driver.findElement(By.xpath(itemLocatorOnTakipList)).getText());
     }
 
     public void removeItemFormTakipEttiklerim() {
         driver.findElement(By.xpath(ucNoktaTakipListItem)).click();
         driver.findElement(By.xpath(takibiBirakButton)).click();
-        // Testi üst üste defalarca run ettiğimde gözlemlediğim bazı durumlarda takibi bırakma elementi DOM'da
-        // görünmesine rağmen tıklama işlemini yapamıyor.
-        // İmplicit wait yeterli olmuyor. Sanıyorum animasyon süresinin duruma negatif etkisi oluşuyor.
-        // Bu sebeple elementin görünürlüğünden emin olamk için aşağıdaki fonksiyonu kullandım.
-        // Elementi bulabilmek için 10 Saniyeye kadar bekleyerek sorunu çözdüm.
+        /* Testi üst üste defalarca run ettiğimde gözlemlediğim bazı durumlarda takibi bırakma elementi DOM'da
+        görünmesine rağmen tıklama işlemini yapamıyor.
+        İmplicit wait yeterli olmuyor. Sanıyorum animasyon süresinin duruma negatif etkisi oluyor.
+        Bu sebeple elementin görünürlüğünden emin olmak için aşağıdaki fonksiyonu kullandım.
+        Elementi bulabilmek için 10 Saniyeye kadar bekleyerek sorunu çözdüm. */
         WebElement onayKutusu = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(takibiBirakmaOnayi)));
         // Bulunan element "onayKutusu" objesinde saklanır ardından click işlemi yapılır.
@@ -88,9 +88,9 @@ public class BookmarkPage extends BasePage {
     public void verifyThatItemIsNotOnTheTakipEttiklerimList() {
         WebElement firstResult = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(takipListenizBos)));
-        // 1 ürün takibi alıp tekrar kaldırdığımızdan ve takip listesinde başka ürün olmadığından
-        // sayfada "Takip listeniz şu anda boş!" yazısı görüntülenmektedir.
-        // Doğrulamayı bu yazının varlığını kontrol ederek yaptım.
+        /* 1 ürünü takibe alıp tekrar kaldırdığımızdan ve takip listesinde başka ürün olmadığından
+        sayfada "Takip listeniz şu anda boş!" yazısı görüntülenmektedir.
+        Doğrulamayı bu yazının varlığını kontrol ederek yaptım. */
         Assert.assertEquals( firstResult.getText(), "Takip listeniz şu anda boş!");
     }
 }

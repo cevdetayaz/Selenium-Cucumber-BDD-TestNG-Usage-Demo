@@ -5,16 +5,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-public class LoginPage extends BasePage {
+public class LoginPage {
 
     WebDriver driver;
-    private String emailBox = "(//*[@type=\"email\"])[2]";
-    private String passwordBox = "(//*[@type=\"password\"])[1]";
-    private CharSequence emailInfo = "r514q.test@inbox.testmail.app";
-    private CharSequence passwordInfo = "M4ae$GrhXZ+hLQS";
+    private final String emailBox = "(//*[@type=\"email\"])[2]";
+    private final String passwordBox = "(//*[@type=\"password\"])[1]";
+    private String girisYapButton = "(//*[@value=\"Giriş yap\"])[1]";
+    private final CharSequence emailInfo = "r514q.test@inbox.testmail.app";
+    private final CharSequence passwordInfo = "M4ae$GrhXZ+hLQS";
+
 
     // Constants
-
     public LoginPage() {
         driver = Driver.getDriver();
     }
@@ -30,7 +31,7 @@ public class LoginPage extends BasePage {
     }
 
     public void clickGirisYapButton() {
-        driver.findElement(By.xpath("(//*[@value=\"Giriş yap\"])[1]")).click();
+        driver.findElement(By.xpath(girisYapButton)).click();
 
     }
 
